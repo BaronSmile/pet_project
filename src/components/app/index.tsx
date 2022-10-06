@@ -1,7 +1,7 @@
 import React from 'react';
 import img1 from '../../../public/assets/img/1.jpg'
 
-const App = () => {
+const App:React.FC = () => {
     return (
         <div>
             <h2>Hello Мир</h2>

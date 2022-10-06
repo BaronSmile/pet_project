@@ -98,12 +98,16 @@ module.exports = {
         }
       },
       {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
+        test: /\.m?[jt]sx$/, // <-- NEW
+        exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            cacheDirectory: true,
+            presets: [
+              "@babel/preset-env",
+              ["@babel/preset-react", { runtime: "automatic" }],
+              "@babel/preset-typescript", // <-- NEW
+            ],
           },
         },
       },
