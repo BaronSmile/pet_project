@@ -14,9 +14,6 @@
   "include": [
     "src",
     //convert just images to modules
-    "./index.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "declaration.d.ts"
   ]
 }
