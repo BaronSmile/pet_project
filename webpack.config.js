@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const json5 = require('json5');
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -47,7 +48,7 @@ module.exports = {
       {
         test: /\.(svg|png|gif|jpg)$/,
         exclude: /fonts/,
-        loader: 'file-loader'
+        type: 'asset/resource',
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
@@ -56,7 +57,13 @@ module.exports = {
           filename: 'fonts/[name][ext]'
         }
       },
-
+      {
+        test: /\.json5$/i,
+        type: 'json',
+        parser: {
+          parse: json5.parse,
+        },
+      },
     ],
   },
   /* Attempt to resolve these extensions in order.
@@ -66,7 +73,7 @@ module.exports = {
      array and skip the rest.
    */
   resolve: {
-    extensions: ['*','.tsx', '.ts', '.js','scss']
+    extensions: ['*','.js','.ts','.tsx',  'scss']
   },
   plugins: [
     new HtmlWebpackPlugin({
