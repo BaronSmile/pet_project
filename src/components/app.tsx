@@ -1,11 +1,19 @@
 import React, {useEffect} from 'react';
+import {Layout} from "antd";
+import {Routes, Route} from "react-router-dom";
+
 import {useTypedSelector} from "../hooks/useTypedSelector";
-import {fetchUsers} from "../store/action-creators/user";
+import {fetchUsers} from "../store/action-creators/game";
 import {useActions} from "../hooks/useActions";
+import MainContent from "./content";
+import HeaderMenu from './header-menu';
+import GameForm from "./form";
 
 const App = () => {
-  const {users, error, loading} = useTypedSelector(state => state.user)
+  const {error, loading, games} = useTypedSelector(state => state.gameResult)
   const {fetchUsers} = useActions()
+
+  console.log(games);
 
   useEffect(() => {
     fetchUsers()
@@ -19,11 +27,13 @@ const App = () => {
   }
 
   return (
-    <div>
-      {users.map(user =>
-        <div key={user.id}>{user.name}</div>
-      )}
-    </div>
+    <Layout className={'layout'}>
+      <HeaderMenu/>
+      <Routes>
+        <Route path={'/'} element={<MainContent gameData={games}/>}/>
+        <Route path={'/form'} element={<GameForm />}/>
+      </Routes>
+    </Layout>
   );
 };
 

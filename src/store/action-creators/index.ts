@@ -1,5 +1,5 @@
-import * as UserActionCreators from './user'
+import * as GameActionCreators from './game'
 
 export default {
-  ...UserActionCreators
+  ...GameActionCreators
 }

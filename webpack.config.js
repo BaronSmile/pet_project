@@ -7,7 +7,8 @@ module.exports = {
   entry: "./src/index.tsx",
   //webpack-dev-server settings
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    historyApiFallback: true,
+    static: path.resolve(__dirname, './dist'),
     port: 3000,
   },
   module: {
