@@ -7,6 +7,7 @@ module.exports = {
   entry: "./src/index.tsx",
   //webpack-dev-server settings
   devServer: {
+    // un error 404
     historyApiFallback: true,
     static: path.resolve(__dirname, './dist'),
     port: 3000,

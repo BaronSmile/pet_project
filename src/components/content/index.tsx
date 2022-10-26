@@ -1,6 +1,5 @@
 import React from 'react';
-import {Layout} from 'antd';
-import {Space, Table, Tag} from 'antd';
+import {Layout, Table, Tag} from 'antd';
 import type {ColumnsType} from 'antd/es/table';
 
 const {Content} = Layout;
@@ -46,11 +45,11 @@ const MainContent = ({gameData}) => {
       },
     },
     {
-      title: 'Type',
-      dataIndex: 'type',
+      title: 'Game Mode',
+      dataIndex: 'game_mode',
       key: 'type',
       render: (_, {type}) => {
-       return type[0].toUpperCase() + type.slice(1)
+        return type[0].toUpperCase() + type.slice(1)
       }
     },
   ];
@@ -67,7 +66,7 @@ const MainContent = ({gameData}) => {
   // ];
 
   return (
-    <Content style={{margin: '24px 16px 0'}}>
+    <Content style={{margin: '24px 16px 0', minHeight: '100vh'}}>
       <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
         <Table bordered columns={columns} dataSource={gameData}/>
       </div>

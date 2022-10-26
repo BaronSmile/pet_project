@@ -1,5 +1,5 @@
 import React from 'react';
-import {Menu, MenuProps} from "antd";
+import {Menu} from "antd";
 import {Header} from "antd/es/layout/layout";
 import {useNavigate} from "react-router-dom";
 

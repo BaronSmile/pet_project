@@ -4,7 +4,15 @@ body {
   font-family: 'Comforter Brush', sans-serif;
 }
 
-.layout{
+.spinner {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
   height: 100vh;
+}
+
+.gameForm{
+  width: 50vw;
 }
 

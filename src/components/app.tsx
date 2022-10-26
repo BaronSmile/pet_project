@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Layout} from "antd";
+import {Layout, Spin, Result} from "antd";
 import {Routes, Route} from "react-router-dom";
 
 import {useTypedSelector} from "../hooks/useTypedSelector";
@@ -20,10 +20,17 @@ const App = () => {
   }, [])
 
   if (loading) {
-    return <h1>Идет загрузка...</h1>
+    return <Spin size='large' className='spinner' tip="Идет загрузка..."/>
   }
   if (error) {
-    return <h1>{error}</h1>
+    return (
+      <Result
+        status="error"
+        title="Error"
+        subTitle="Please check and modify the following information before resubmitting."
+      >
+      </Result>
+    )
   }
 
   return (
@@ -31,7 +38,7 @@ const App = () => {
       <HeaderMenu/>
       <Routes>
         <Route path={'/'} element={<MainContent gameData={games}/>}/>
-        <Route path={'/form'} element={<GameForm />}/>
+        <Route path={'/form'} element={<GameForm/>}/>
       </Routes>
     </Layout>
   );
