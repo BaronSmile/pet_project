@@ -13,7 +13,6 @@ const App = () => {
   const {error, loading, games} = useTypedSelector(state => state.gameResult)
   const {fetchUsers} = useActions()
 
-  console.log(games);
 
   useEffect(() => {
     fetchUsers()

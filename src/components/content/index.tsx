@@ -54,19 +54,9 @@ const MainContent = ({gameData}) => {
     },
   ];
 
-  // const data: DataType[] = [
-  //   {
-  //     key: '1',
-  //     date: '24.10.2022',
-  //     hero: 'Axe',
-  //     team: 'Radiant',
-  //     result: 'loss',
-  //     type: 'all pick'
-  //   }
-  // ];
-
   return (
     <Content style={{margin: '24px 16px 0', minHeight: '100vh'}}>
+
       <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
         <Table bordered columns={columns} dataSource={gameData}/>
       </div>

@@ -11,8 +11,16 @@ body {
   gap: 1em;
   height: 100vh;
 }
+.form {
+  &_game{
 
-.gameForm{
-  width: 50vw;
+  }
+  &-row {
+    min-height: 100vh;
+    margin-top: 2em;
+  }
+  &-title{
+    text-align: center;
+  }
 }
 

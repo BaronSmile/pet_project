@@ -1,0 +1,84 @@
+[
+  {
+    "page_label": "Форма для заполнения Игрового Результата",
+    "fields": [
+      {
+        "field_id": "game_date",
+        "field_label": "Дата",
+        "field_placeholder": "Дата игры",
+        "field_type": "date",
+        "field_required": {
+          "required": "true",
+          "message": "Выберите дату игры"
+        }
+      },
+      {
+        "field_id": "hero",
+        "field_label": "Герои",
+        "field_placeholder": "Выберите героя",
+        "field_type": "select",
+        "field_data": ["Razor", "Lina", "Riki"],
+        "field_required": {
+          "required": "true",
+          "message": "Выберите героя"
+        }
+      },
+      {
+        "field_id": "team_mode",
+        "field_label": "Команда",
+        "field_type": "radio",
+        "field_data": [
+          {
+            "value": "radiant",
+            "text": "Свет"
+          },
+          {
+            "value": "dire",
+            "text": "Тьма"
+          }
+        ],
+        "field_required": {
+          "required": "true",
+          "message": "Выберите сторону"
+        }
+      },
+      {
+        "field_id": "game_mode",
+        "field_label": "Игровой Режим",
+        "field_placeholder": "Выберите режим игры",
+        "field_type": "select",
+        "field_data": [
+          "Ranked All Pick",
+          "All Pick",
+          "Single Draft",
+          "Turbo",
+          "All Random",
+          "Ability Draft"
+        ],
+        "field_required": {
+          "required": "true",
+          "message": "Выберите режим игры"
+        }
+      },
+      {
+        "field_id": "result",
+        "field_label": "Результат игры",
+        "field_type": "radio",
+        "field_data": [
+          {
+            "value": "win",
+            "text": "Win"
+          },
+          {
+            "value": "loss",
+            "text": "Loss"
+          }
+        ],
+        "field_required": {
+          "required": "true",
+          "message": "Ваш результат игры"
+        }
+      }
+    ]
+  }
+]

@@ -33,6 +33,7 @@ module.exports = {
         ],
         // npm i style-loader css-loader sass sass-loader -D
       },
+      // json
       {
         test: /\.bundle\.ts$/,
         use: {
@@ -76,7 +77,7 @@ module.exports = {
      array and skip the rest.
    */
   resolve: {
-    extensions: ['*','.js','.ts','.tsx',  'scss']
+    extensions: ['*','.js','.ts','.tsx',  '.scss']
   },
   plugins: [
     new HtmlWebpackPlugin({
